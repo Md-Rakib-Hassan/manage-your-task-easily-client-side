@@ -33,9 +33,7 @@ const Todo = () => {
         localStorage.setItem("todos", JSON.stringify(updatedTodos));
       };
     
-      const handleEdit = (id) => {
-        console.log("Edit todo with id:", id);
-      };
+  
     
       const handleStart = (id) => {
         const updatedTodos = todos.map((todo) =>
@@ -56,12 +54,12 @@ const Todo = () => {
         <div className="container mx-auto mt-8">
         <div className="grid grid-cols-3 gap-4">
           <div>
-            <h2 className="text-xl font-semibold mb-4">Pending</h2>
+            <h2 className="text-xl font-semibold mb-4">To Do</h2>
             <ul>
               {todos
                 .filter((todo) => todo.status === "pending")
                 .map((todo) => (
-                  <li key={todo.id} className="mb-2 flex justify-between">
+                  <li key={todo.id} className="mb-2 flex justify-between shadow-md bg-slate-50 py-3 px-1 rounded-md">
                     <span>{todo.text}</span>
                     <div>
                       <button
@@ -82,12 +80,12 @@ const Todo = () => {
             </ul>
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-4">In Progress</h2>
+            <h2 className="text-xl font-semibold mb-4">On Going</h2>
             <ul>
               {todos
                 .filter((todo) => todo.status === "in-progress")
                 .map((todo) => (
-                  <li key={todo.id} className="mb-2 flex justify-between">
+                  <li key={todo.id} className="mb-2 flex justify-between shadow-md bg-slate-50 py-3 px-1 rounded-md">
                     <span>{todo.text}</span>
                     <div>
                       <button
@@ -113,7 +111,7 @@ const Todo = () => {
               {todos
                 .filter((todo) => todo.status === "completed")
                 .map((todo) => (
-                  <li key={todo.id} className="mb-2 flex justify-between">
+                  <li key={todo.id} className="mb-2 flex justify-between shadow-md bg-slate-50 py-3 px-1 rounded-md">
                     <span>{todo.text}</span>
                     <button
                       className="text-red-500"
