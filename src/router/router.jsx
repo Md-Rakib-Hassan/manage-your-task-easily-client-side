@@ -8,6 +8,9 @@ import AboutUs from "../pages/AboutUs";
 import ContactUs from "../pages/ContactUs";
 import Login from "../authentication/Login";
 import Registration from "../authentication/Registration";
+import Dashboard from "../layout/Dashboard";
+import DashHome from "../pages/dashboard/DashHome";
+import PrivateRoute from "./PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -36,6 +39,16 @@ import Registration from "../authentication/Registration";
         }
       ]
     },
+    {
+      path:'dashboard',
+      element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      children:[
+        {
+          path:'',
+          element:<DashHome></DashHome>,
+        }
+      ]
+    }
   ]);
 
 export default router;

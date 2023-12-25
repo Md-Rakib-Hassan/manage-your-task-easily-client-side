@@ -15,7 +15,7 @@ const Login = () => {
         signInUser(email, password)
             .then(() => {
                 Swal.fire('Logged In', 'You successfully done Login', 'success')
-                navigate('/');
+                navigate('/dashboard');
             })
 
             .catch((error) => {
@@ -27,6 +27,7 @@ const Login = () => {
     const handleGoogleSignInPopup = () => {
         googleSignInbyPop()
             .then(() => {
+                navigate('/dashboard')
                 
             })
 
